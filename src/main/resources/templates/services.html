@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Bank Services</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 th:text="${bank.name}"></h1>
+        <h3>Services Offered</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Service Name</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Iterate over the services list and display each service -->
+                <tr th:each="service : ${services}">
+                    <td th:text="${service.name}"></td>
+                    <td th:text="${service.description}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
